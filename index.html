@@ -1,0 +1,27 @@
+<html>
+
+<head>
+    <title>
+        Video downloader
+    </title>
+    <style>
+        body{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Accept the download prompt to download your video, and then you can close this page</h1>
+    <a id="link" href="" target="_blank" download></a>
+    <script>
+        var url = decodeURIComponent(window.location.search.substring(1));
+        if (url != "") {
+            document.getElementById("link").href = url;
+            document.getElementById("link").name = url.split("/").pop();
+            document.getElementById("link").click();
+        }
+    </script>
+</body>
+<html>

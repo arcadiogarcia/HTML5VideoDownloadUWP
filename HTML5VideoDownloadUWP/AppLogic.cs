@@ -82,15 +82,16 @@ namespace HTML5VideoDownloadUWP
                     }
                     break;
                 case AppState.selectingDevice:
+                    var downloadUrl = new Uri("https://arcadiogarcia.github.io/HTML5VideoDownloadUWP/?" + Uri.EscapeDataString(currentURL)) ;
                     if (startingDevices.Contains(text))
                     {
                         //Asuming it never fails
-                        await Windows.System.Launcher.LaunchUriAsync(new Uri(currentURL));
+                        await Windows.System.Launcher.LaunchUriAsync(downloadUrl);
                         Application.Current.Exit();
                     }
                     else
                     {
-                        var launchUriStatus = await RemoteLauncher.LaunchUriAsync(new RemoteSystemConnectionRequest(remoteSystems.Find(x => x.DisplayName == text)), new Uri(currentURL));
+                        var launchUriStatus = await RemoteLauncher.LaunchUriAsync(new RemoteSystemConnectionRequest(remoteSystems.Find(x => x.DisplayName == text)), downloadUrl);
                         if (launchUriStatus  == RemoteLaunchUriStatus.Success)
                         {
                             Application.Current.Exit();

@@ -79,8 +79,6 @@ namespace HTML5VideoDownloadUWP
                 ApplicationViewTitleBar titleBar = ApplicationView.GetForCurrentView().TitleBar;
                 titleBar.ButtonBackgroundColor = Colors.Transparent;
                 titleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
-                //TODO remove this
-                AppLogic.Analyze(new Uri("https://m.watchcartoononline.io/teen-titans-go-season-4-episode-37-38-justice-leagues-next-top-talent-idol-star"));
             }
         }
 
